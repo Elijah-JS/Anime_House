@@ -1,4 +1,4 @@
-# Anime Home
+# Anime House
 
 *An internal platform for comprehensive anime reviews and ratings.*
 
@@ -15,7 +15,7 @@
 
 ## Project Overview
 
-Anime Home is a web and mobile application designed to function as the "Rotten Tomatoes" for anime. It offers a platform where users can discover, rate, and discuss various anime series and movies.
+Anime House is a web and mobile application designed to function as the "Rotten Tomatoes" for anime. It offers a platform where users can discover, rate, and discuss various anime series and movies.
 
 ## Features
 
