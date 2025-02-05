@@ -39,8 +39,8 @@ To set up the project locally:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/rotten-senpai.git
-   cd rotten-senpai
+   git clone https://github.com/your-username/anime-house.git
+   cd anime-house
    ```
 
 2. **Install Dependencies**:
