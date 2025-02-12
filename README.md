@@ -22,7 +22,7 @@ Anime House is a web and mobile application designed to function as the "Rotten 
 - **User Registration and Profiles**: Users can sign up, create profiles, and manage their watchlists.
 - **Comprehensive Anime Database**: Access detailed information, including titles, synopses, and release dates.
 - **Rating and Review System**: Features aggregate critic scores and user-generated reviews.
-- **Advanced Search Functionality**: Search by title, genre, studio, or user preferences.
+- **Advanced Search Functionality**: Search by title, genre, studio, provided tags, or user preferences.
 - **Watchlist Management**: Track anime that users have watched, are currently watching, or plan to watch.
 - **Community Interaction**: Engage with other users through comment sections.
 
