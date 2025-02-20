@@ -40,7 +40,7 @@ To set up the project locally:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/your-username/Anime-House.git
-   cd Anime-House
+   cd Anime_House/frontend
    ```
 
 2. **Install Dependencies**:
@@ -49,7 +49,7 @@ To set up the project locally:
    ```
 
 3. **Configure Environment Variables**:
-   - Create a `.env` file in the root directory.
+   - Create a `.env` file in the root directory of frontend folder.
    - Add necessary environment variables as specified in `.env.example`.
 
 4. **Start the Development Server**:
