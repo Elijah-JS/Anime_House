@@ -6,8 +6,8 @@ function Header() {
 
   return (
     <header className="p-4 bg-gray-900 text-white shadow-lg flex justify-between items-center">
-      {/* Logo */}
-      <Link to="/" className="text-3xl font-extrabold text-emerald-400 tracking-wide">
+      {/* Logo (Now Links to About Us) */}
+      <Link to="/about" className="text-3xl font-extrabold text-emerald-400 tracking-wide">
         AnimeHouse
       </Link>
 
@@ -35,7 +35,9 @@ function Header() {
       <div className="flex items-center space-x-6">
         {user ? (
           <>
-            <span className="text-gray-300 text-lg">Welcome, <span className="text-emerald-400 font-semibold">{user.email.split('@')[0]}</span></span>
+            <span className="text-gray-300 text-lg">
+              Welcome, <span className="text-emerald-400 font-semibold">{user.email.split('@')[0]}</span>
+            </span>
             <button
               onClick={logout}
               className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-lg font-semibold transition-all shadow-md">
@@ -53,3 +55,4 @@ function Header() {
 }
 
 export default Header;
+
