@@ -1,13 +1,9 @@
-import React from 'react';
-
-const Footer = () => {
+function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-4 mt-8">
-      <div className="text-center">
-        <p>&copy; 2025 Anime House. All rights reserved.</p>
-      </div>
+    <footer className="p-4 bg-gray-800 text-white text-center">
+      <p>&copy; {new Date().getFullYear()} AnimeHouse. All rights reserved.</p>
     </footer>
   );
-};
+}
 
 export default Footer;
