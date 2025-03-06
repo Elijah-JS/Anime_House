@@ -29,7 +29,7 @@ function Profile() {
         <div className="flex flex-col items-center">
           <img
             src="https://via.placeholder.com/100" // Placeholder profile image
-            alt="User Avatar"
+            alt= "Avatar"
             className="w-24 h-24 rounded-full border-4 border-emerald-400"
           />
           <h2 className="text-2xl font-semibold mt-4">{user.email.split('@')[0]}</h2> {/* Display username */}

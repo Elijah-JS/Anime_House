@@ -11,7 +11,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     await login(email, password);
-    navigate("/profile"); // ✅ Redirect after fake login
+    navigate("/profile"); 
   };
 
   if (user) {
