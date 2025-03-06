@@ -17,8 +17,8 @@ import NotFound from "./pages/NotFound";
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth();
 
-  if (loading) return <p>Loading...</p>; // ✅ Show loading while checking auth state
-  return user ? children : <Navigate to="/login" />; // ✅ Redirect to login if not authenticated
+  if (loading) return <p>Loading...</p>; // Show loading while checking auth state
+  return user ? children : <Navigate to="/login" />; //  Redirect to login if not authenticated
 }
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
               <Route path="/about" element={<AboutUs />} />
               <Route path="/search" element={<SearchResults />} />
               <Route path="/anime/:id" element={<AnimeDetails />} />
-              
+
               {/* 🔹 Protected Routes */}
               <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
               <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />

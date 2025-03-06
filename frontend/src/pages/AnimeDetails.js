@@ -21,7 +21,7 @@ function AnimeDetails() {
     <div className="min-h-screen flex flex-col items-center bg-gray-950 text-white p-6">
       <h1 className="text-4xl font-extrabold text-blue-400">{anime.title}</h1>
       <img src={anime.image} alt={anime.title} className="w-64 h-96 object-cover rounded-lg mt-4 shadow-md border border-blue-500" />
-      
+
       <p className="text-gray-300 text-center mt-4 max-w-2xl">{anime.synopsis}</p>
 
       {/* ✅ Show Anime's Current Rating */}

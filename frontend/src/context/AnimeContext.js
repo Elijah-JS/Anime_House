@@ -93,7 +93,7 @@ export function AnimeProvider({ children }) {
       getUserFavorites,
       handleAddToFavorites,
       handleRemoveFromFavorites,
-      updateRating  // ✅ Now available in context
+      updateRating  // Now available in context
     }}>
       {children}
     </AnimeContext.Provider>

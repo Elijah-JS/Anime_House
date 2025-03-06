@@ -8,7 +8,7 @@ function Profile() {
 
   useEffect(() => {
     if (!user) {
-      navigate("/login"); // ✅ Redirects if not logged in
+      navigate("/login"); // Redirects if not logged in
     }
   }, [user, navigate]);
 
