@@ -11,7 +11,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     await login(email, password);
-    navigate("/profile"); // Redirect after login
+    navigate("/profile");
   };
 
   if (user) {
@@ -20,16 +20,16 @@ function Login() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
-      <h1 className="text-2xl font-bold mb-4">Login</h1>
-      <form onSubmit={handleLogin} className="bg-white p-6 rounded-lg shadow-md w-80">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-[#0F172A] text-white">
+      <h1 className="text-5xl font-extrabold mb-3 text-emerald-400">Login to AnimeHouse</h1>
+      <form onSubmit={handleLogin} className="bg-[#1E293B] p-6 rounded-2xl shadow-md w-80">
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           required
-          className="w-full p-2 border rounded mb-2"
+          className="w-full p-2 border rounded mb-2 bg-[#0F172A] text-white placeholder-gray-400 border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400"
         />
         <input
           type="password"
@@ -37,17 +37,16 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           required
-          className="w-full p-2 border rounded mb-4"
+          className="w-full p-2 border rounded mb-4 bg-[#0F172A] text-white placeholder-gray-400 border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400"
         />
-        <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">
+        <button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-500 text-white py-2 rounded-xl transition-all duration-200">
           Login
         </button>
       </form>
 
-      {/* Register Link */}
-      <p className="mt-4 text-gray-600">
+      <p className="mt-4 text-gray-400">
         Don't have an account?{" "}
-        <Link to="/register" className="text-blue-500 hover:underline">
+        <Link to="/register" className="text-green-400 hover:underline">
           Register here
         </Link>
       </p>
