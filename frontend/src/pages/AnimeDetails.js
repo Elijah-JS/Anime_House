@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useAnime } from "../context/AnimeContext";
+import { useMockAnime as useAnime } from "../context/MockAnimeContext";
 import { useAuth } from "../context/AuthContext";
 import RatingStars from "../components/RatingStars";
 import RatingSystem from "../components/RatingSystem";

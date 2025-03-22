@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
-import { AnimeProvider } from "./context/AnimeContext";
+import { MockAnimeProvider } from "./context/MockAnimeContext";
+import { AnimeProvider } from "./context/AnimeContext"; // ✅ Real API provider
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -13,42 +14,39 @@ import Favorites from "./pages/Favorites";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
-// 🔹 Function to protect private routes
+// 🔹 Protected Route wrapper
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth();
-
-  if (loading) return <p>Loading...</p>; // Show loading while checking auth state
-  return user ? children : <Navigate to="/login" />; //  Redirect to login if not authenticated
+  if (loading) return <p>Loading...</p>;
+  return user ? children : <Navigate to="/login" />;
 }
 
 function App() {
   return (
     <AuthProvider>
-      <AnimeProvider>
-        <Router>
-          <Header />
-          <div className="min-h-screen">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/about" element={<AboutUs />} />
-              <Route path="/search" element={<SearchResults />} />
-              <Route path="/anime/:id" element={<AnimeDetails />} />
-
-              {/* 🔹 Protected Routes */}
-              <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
-              <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
-
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-          <Footer />
-        </Router>
+      <AnimeProvider> {/*  Wrap the real provider around everything */}
+        <MockAnimeProvider> {/*  Temporary wrapper for mock data */}
+          <Router>
+            <Header />
+            <div className="min-h-screen">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/search" element={<SearchResults />} />
+                <Route path="/anime/:id" element={<AnimeDetails />} />
+                <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
+                <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </div>
+            <Footer />
+          </Router>
+        </MockAnimeProvider>
       </AnimeProvider>
     </AuthProvider>
   );
 }
 
 export default App;
-

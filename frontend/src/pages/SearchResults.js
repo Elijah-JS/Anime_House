@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAnime } from "../context/AnimeContext";
+import { useMockAnime as useAnime } from "../context/MockAnimeContext";
 import AnimeCard from "../components/AnimeCard";
 
 function SearchResults() {
