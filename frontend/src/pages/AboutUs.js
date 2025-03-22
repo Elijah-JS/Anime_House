@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-10">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-10">
       
       {/* Grid Layout For The 1x3 Table. Section 1 - 3 Are Commented Below Accordingly */}
       <div className="max-w-6xl w-full grid grid-cols-3 gap-8">
@@ -32,7 +32,7 @@ export default function AboutUs() {
           <h2 className="text-4xl font-extrabold mb-4 text-emerald-400">Our Vision</h2>
           <p className="text-lg leading-relaxed">
             We’re more than just a website—we’re a passionate team based in <b>California</b>,  
-            working tirelessly to build the **ultimate** anime hub.  
+            working tirelessly to build the <b>ultimate</b> anime hub.  
             Our vision? To become the <b>#1 go-to platform</b> for anime lovers worldwide,  
             connecting fans with the latest news, deep-dive discussions, and an ever-growing  
             community of like-minded enthusiasts. Let's build something amazing together! 🌟
