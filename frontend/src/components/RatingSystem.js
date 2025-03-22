@@ -1,28 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function RatingSystem({ onRate }) {
-  const [rating, setRating] = useState(0);
+function RatingSystem({ onRate, initialRating = 0 }) {
+  const [rating, setRating] = useState(initialRating);
+  const [hovered, setHovered] = useState(null); // Optional: to highlight bowls on hover
+
+  useEffect(() => {
+    setRating(initialRating);
+  }, [initialRating]);
 
   const handleRate = (newRating) => {
     setRating(newRating);
     if (onRate) {
-      onRate(newRating); // Send rating to backend or parent component
+      onRate(newRating);
     }
   };
 
   return (
-    <div className="flex text-lg">
-      {[...Array(5)].map((_, index) => (
-        <button
-          key={index}
-          onClick={() => handleRate(index + 1)}
-          className={`transition-all ${
-            index < rating ? "text-emerald-400" : "text-gray-400 hover:text-emerald-300"
-          }`}
-        >
-          ★
-        </button>
-      ))}
+    <div className="flex">
+      {[...Array(5)].map((_, index) => {
+        const current = index + 1;
+        const filled = hovered !== null ? current <= hovered : current <= rating;
+
+        return (
+          <img
+            key={index}
+            src={
+              filled
+                ? "/assets/ramenBowl.jpg"
+                : "/assets/ramenBowlEmpty.png"
+            }
+            alt={`Star ${current}`}
+            className="w-12 h-12 sm:w-16 sm:h-16 mx-2 cursor-pointer transition-transform hover:scale-110"
+            onClick={() => handleRate(current)}
+            onMouseEnter={() => setHovered(current)}
+            onMouseLeave={() => setHovered(null)}
+          />
+        );
+      })}
     </div>
   );
 }
