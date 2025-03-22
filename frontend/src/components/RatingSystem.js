@@ -26,7 +26,7 @@ function RatingSystem({ onRate, initialRating = 0 }) {
             key={index}
             src={
               filled
-                ? "/assets/ramenBowl.jpg"
+                ? "/assets/ramenBowl.png"
                 : "/assets/ramenBowlEmpty.png"
             }
             alt={`Star ${current}`}
