@@ -1,5 +1,5 @@
-import ramenBowl from "../assets/ball.png";
-import ramenBowlEmpty from "../assets/emptyball.png";
+import ramenBowl from "../assets/ramenBowl.png";
+import ramenBowlEmpty from "../assets/ramenBowlEmpty.png";
 
 function RatingStars({ rating }) {
   const maxStars = 5;
